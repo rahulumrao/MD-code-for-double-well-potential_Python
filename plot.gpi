@@ -1,0 +1,15 @@
+a = 1.5 ; U = 0.01 ; k = 1.0
+
+set xrange [-2.5:2.5]
+set yrange [-0.5:0.5]
+set zrange [0:0.2]
+#set yrange [-2.0:2.0]
+#set zrange [0:1.5]
+
+set xlabel "X"
+set ylabel "Y"
+
+f(x,y) = U*((x**2 - a**2)**2) + 0.5*y**2
+
+splot 'pot.txt' u 2:3:4 w p , f(x,y)
+
